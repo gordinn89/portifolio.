@@ -327,3 +327,68 @@ body.dark .pessoa-habilidade {
     padding-left: 0.8rem;
   }
 }
+
+/* Estilo para as seções "pessoa" da página Sobre */
+
+.balão.pessoa {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 30px var(--shadow-light);
+  transition: box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+/* Sombra mais forte no modo escuro */
+body.dark .balão.pessoa {
+  box-shadow: 0 8px 40px var(--shadow-dark);
+}
+
+/* Container que alinha foto e texto lado a lado */
+.perfil {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Foto arredondada com sombra igual ao avatar da página inicial */
+.foto-perfil {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 60%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.foto-perfil:hover {
+  transform: scale(1.05);
+}
+
+/* Texto dentro da pessoa */
+.perfil > div {
+  flex: 1;
+  min-width: 250px; /* para manter legível em telas maiores */
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .perfil {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .foto-perfil {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 1rem;
+  }
+
+  .perfil > div {
+    min-width: auto;
+  }
+}
