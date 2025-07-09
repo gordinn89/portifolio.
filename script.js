@@ -1,18 +1,17 @@
 const toggleThemeBtn = document.getElementById('toggle-theme');
 
-function setTheme(isDark) {
-  if (isDark) {
+function setTheme(dark) {
+  if (dark) {
     document.body.classList.add('dark');
     localStorage.setItem('theme', 'dark');
-    toggleThemeBtn.textContent = '☀️'; // opcional: mudar ícone para sol no modo escuro
   } else {
     document.body.classList.remove('dark');
     localStorage.setItem('theme', 'light');
-    toggleThemeBtn.textContent = '🌙'; // ícone lua para modo claro
   }
+  // emoji sempre lua
+  toggleThemeBtn.textContent = '🌗';
 }
 
-// Carrega tema salvo no localStorage ou usa preferência do sistema
 function loadTheme() {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme) {
@@ -23,14 +22,13 @@ function loadTheme() {
   }
 }
 
-// Evento de clique para alternar tema
 toggleThemeBtn.addEventListener('click', () => {
   const isDark = document.body.classList.contains('dark');
   setTheme(!isDark);
 });
 
-// Configura tema ao carregar a página
 loadTheme();
+
 
 document.querySelectorAll('.toggle-habilidades-btn').forEach(btn => {
   btn.addEventListener('click', () => {
