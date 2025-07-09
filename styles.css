@@ -421,3 +421,56 @@ body.dark .balão.pessoa {
     min-width: auto;
   }
 }
+
+/* Container que agrupa os perfis lado a lado em telas maiores */
+.descricao-dupla {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+}
+
+/* Cada perfil ocupa metade do espaço disponível */
+.descricao-dupla .perfil {
+  flex: 1;
+  min-width: 250px;
+  background: var(--card-bg);
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px var(--shadow-light);
+}
+
+/* Responsivo: empilha em telas menores */
+@media (max-width: 768px) {
+  .descricao-dupla {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .descricao-dupla .perfil {
+    min-width: auto;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Centralizar e ajustar a seção intro */
+.intro {
+  max-width: 900px;
+  margin: 80px auto 2rem;
+  padding: 0 1rem;
+}
+
+.logo {
+  width: 180px;
+  height: auto;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 140px;
+  }
+}
