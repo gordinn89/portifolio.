@@ -8,6 +8,7 @@
   --btn-hover-bg: #005fcc;
   --btn-border: #0077ff;
   --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.4);
 }
 
 body.dark {
@@ -20,6 +21,7 @@ body.dark {
   --btn-hover-bg: #66bbff;
   --btn-border: #3399ff;
   --shadow-light: rgba(0, 0, 0, 0.3);
+  --shadow-dark: rgba(0, 0, 0, 0.7);
 }
 
 body {
@@ -34,7 +36,6 @@ body {
   transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* Cabeçalho fixo e menu horizontal */
 header {
   position: fixed;
   top: 0;
@@ -107,7 +108,6 @@ nav {
   outline: none;
 }
 
-/* Espaçamento para compensar menu fixo */
 main {
   max-width: 900px;
   margin: 100px auto 2rem;
@@ -115,7 +115,6 @@ main {
   flex-grow: 1;
 }
 
-/* Blocos (balões) de conteúdo */
 section {
   background: var(--card-bg);
   padding: 1.8rem 2rem;
@@ -127,7 +126,11 @@ section {
   transition: background 0.5s ease, box-shadow 0.3s ease;
 }
 
-/* Títulos azuis */
+/* Sombra mais forte no modo escuro para os blocos */
+body.dark section {
+  box-shadow: 0 8px 40px var(--shadow-dark);
+}
+
 h1, h2, h3 {
   color: var(--title-color);
   margin-top: 0;
@@ -135,21 +138,19 @@ h1, h2, h3 {
   font-weight: 700;
 }
 
-/* Texto principal preto (modo claro) ou claro (modo escuro) */
 p, li {
   color: var(--text-color);
   font-size: 1.1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem; /* menos espaço entre parágrafos para compactar */
   line-height: 1.5;
 }
 
-/* Estilo das listas */
 ul {
   padding-left: 1.4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
-/* Cartões dos projetos */
+/* Cartões projetos e cards mantidos (se usar) */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -180,7 +181,6 @@ ul {
   text-decoration: underline;
 }
 
-/* Formulário */
 form {
   background: var(--card-bg);
   padding: 1.5rem 2rem;
@@ -222,7 +222,6 @@ textarea:focus {
   color: var(--btn-text);
 }
 
-/* Botão */
 button {
   background: var(--btn-bg);
   color: var(--btn-text);
@@ -242,7 +241,6 @@ button:focus {
   outline: none;
 }
 
-/* Rodapé */
 footer {
   text-align: center;
   padding: 2rem 1rem;
@@ -253,7 +251,6 @@ footer {
   margin-top: auto;
 }
 
-/* Logo (avatar) */
 .logo {
   width: 180px;
   height: auto;
@@ -262,7 +259,6 @@ footer {
   border-radius: 50%;
 }
 
-/* Perfil: organização vertical */
 .pessoa {
   display: flex;
   flex-direction: column;
@@ -271,7 +267,6 @@ footer {
   text-align: center;
 }
 
-/* Foto perfil */
 .foto-perfil {
   width: 160px;
   height: 160px;
@@ -290,27 +285,30 @@ footer {
 .habilidades-pessoas {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem; /* menor gap para as pessoas */
 }
 
 /* Cada bloco pessoa + habilidades */
 .pessoa-habilidade {
   background: var(--card-bg);
   border-radius: 20px;
-  padding: 1.8rem 2rem;
+  padding: 1.5rem 2rem;
   box-shadow: 0 8px 30px var(--shadow-light);
   transition: box-shadow 0.3s ease;
 }
 
-/* Título dentro do bloco */
+/* sombra mais forte no modo escuro para o bloco pessoa-habilidade */
+body.dark .pessoa-habilidade {
+  box-shadow: 0 8px 40px var(--shadow-dark);
+}
+
 .pessoa-habilidade h2 {
   color: var(--title-color);
   margin-top: 0;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
   font-weight: 700;
 }
 
-/* Botão "Clique aqui" estilizado */
 .toggle-habilidades-btn {
   background: var(--btn-bg);
   color: var(--btn-text);
@@ -331,46 +329,33 @@ footer {
   transform: scale(1.05);
 }
 
-/* Lista de habilidades ocultável */
 .habilidades-lista {
   display: none;
-  gap: 1rem;
+  gap: 0.8rem; /* menos espaço entre habilidades */
+  padding-left: 0;
 }
 
-/* Cada habilidade - layout horizontal no desktop */
+/* Habilidades agora só texto, mais compactas */
 .habilidade {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
+  margin-bottom: 0.6rem; /* reduzir espaço vertical */
+  padding-left: 1rem;
+  border-left: 4px solid var(--btn-bg);
 }
 
-/* Texto da habilidade */
 .habilidade h3 {
-  flex: 1 1 100px;
-  margin: 0 0 0.5rem 0;
   color: var(--title-color);
   font-weight: 700;
-  min-width: 100px;
+  margin: 0 0 0.2rem 0;
+  font-size: 1.1rem;
 }
 
 .habilidade p {
-  flex: 2 1 300px;
-  margin: 0 0.5rem 0 0;
+  margin: 0;
   color: var(--text-color);
   font-size: 1rem;
 }
 
-/* Canvas do gráfico */
-.habilidade canvas {
-  flex: 0 0 100px;
-  width: 100px !important;
-  height: 100px !important;
-  border-radius: 50%;
-}
-
-/* Media Queries para responsividade */
+/* Responsividade */
 
 @media (max-width: 768px) {
   nav {
@@ -383,17 +368,14 @@ footer {
     overflow-x: visible;
   }
 
-  /* Ajusta seção principal para margem menor no topo */
   main {
     margin: 120px 1rem 2rem;
   }
 
-  /* Ajusta tamanho da logo para mobile */
   .logo {
     width: 140px;
   }
 
-  /* Ajusta tamanhos de título */
   h1, h2 {
     font-size: 1.5rem;
   }
@@ -402,29 +384,13 @@ footer {
     font-size: 1rem;
   }
 
-  /* Ajusta foto perfil */
   .foto-perfil {
     width: 140px;
     height: 140px;
   }
 
-  /* Habilidade empilhada em mobile */
   .habilidade {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .habilidade h3,
-  .habilidade p,
-  .habilidade canvas {
-    flex: none;
-    width: 100%;
-  }
-
-  .habilidade canvas {
-    margin-top: 0.5rem;
-    max-width: 120px;
-    height: auto !important;
+    padding-left: 0.8rem;
+    margin-bottom: 0.5rem;
   }
 }
-
