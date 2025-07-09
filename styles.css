@@ -299,3 +299,31 @@ footer {
 .btn-cta:hover {
   background: #005fcc;
 }
+.habilidades-lista {
+  margin-top: 1rem;
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 1rem;
+  max-width: 600px;
+}
+
+.habilidade {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.toggle-habilidades-btn {
+  margin-top: 0.5rem;
+  background: #0077ff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle-habilidades-btn:hover {
+  background: #005fcc;
+}
