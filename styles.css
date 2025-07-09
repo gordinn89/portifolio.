@@ -327,3 +327,30 @@ footer {
 .toggle-habilidades-btn:hover {
   background: #005fcc;
 }
+
+/* Já existentes ... */
+
+/* Diminuindo os gráficos das habilidades */
+.habilidade canvas {
+  max-width: 120px !important;
+  max-height: 120px !important;
+  display: block;
+  margin: 0 auto 0.8rem auto;
+}
+
+/* Botão de alternar tema */
+#toggle-theme {
+  background: transparent;
+  border: 2px solid #0077ff;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.7rem;
+  color: #0077ff;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#toggle-theme:hover {
+  background: #0077ff;
+  color: #fff;
+}
