@@ -401,6 +401,21 @@ body.dark .balão.pessoa {
 .foto-perfil:hover {
   transform: scale(1.05);     /* zoom suave ao passar o mouse */
 }
+.foto-perfil {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;       /* Faz a imagem ficar redonda */
+  object-fit: cover;        /* Corta a imagem pra caber no círculo */
+  object-position: center 60%;  /* Ajusta o foco da imagem dentro do círculo */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  display: block;
+}
+
+.foto-perfil:hover {
+  transform: scale(1.05);
+}
 
   .perfil > div {
     min-width: auto;
