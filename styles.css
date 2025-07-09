@@ -530,3 +530,75 @@ body.dark {
   --text-color: #f0f0f0;
   --card-bg: rgba(236, 226, 226, 0.05);
 }
+
+/* Habilidades - bloco com texto e gráfico lado a lado */
+.habilidade {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgb(0 0 0 / 0.1);
+  color: var(--text-color);
+}
+
+.habilidade .texto {
+  flex: 1;
+}
+
+.habilidade h3, .habilidade p {
+  margin: 0;
+}
+
+/* Ajusta o tamanho do gráfico */
+.habilidade canvas {
+  width: 100px !important;
+  height: 100px !important;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+/* Para telas menores: mantém lado a lado */
+@media (max-width: 600px) {
+  .habilidade {
+    flex-direction: row;
+  }
+}
+
+/* Botão para alternar habilidades */
+.toggle-habilidades-btn {
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  user-select: none;
+  font-size: 1rem;
+}
+
+.toggle-habilidades-btn:hover {
+  background-color: #005fcc;
+}
+
+/* Ícone setinha */
+.toggle-habilidades-btn::after {
+  content: "▼";
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  margin-left: 0.3rem;
+}
+
+.toggle-habilidades-btn.active::after {
+  content: "▲";
+  transform: rotate(180deg);
+}
