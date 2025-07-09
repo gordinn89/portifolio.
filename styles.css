@@ -387,6 +387,20 @@ body.dark .balão.pessoa {
     height: 140px;
     margin-bottom: 1rem;
   }
+.foto-perfil {
+  width: 160px;               /* tamanho da imagem */
+  height: 160px;
+  border-radius: 50%;         /* deixa a imagem circular */
+  object-fit: cover;          /* corta e ajusta a imagem para preencher o círculo */
+  object-position: center 60%; /* ajusta o foco da imagem verticalmente */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* sombra leve ao redor */
+  transition: transform 0.3s ease;  /* efeito suave ao passar o mouse */
+  flex-shrink: 0;             /* evita que encolha no flexbox */
+}
+
+.foto-perfil:hover {
+  transform: scale(1.05);     /* zoom suave ao passar o mouse */
+}
 
   .perfil > div {
     min-width: auto;
