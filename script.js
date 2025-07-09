@@ -8,7 +8,7 @@ function setTheme(dark) {
     document.body.classList.remove('dark');
     localStorage.setItem('theme', 'light');
   }
-  // emoji sempre lua
+  // Emoji fixo da lua (🌗) em qualquer tema
   toggleThemeBtn.textContent = '🌗';
 }
 
@@ -29,12 +29,11 @@ toggleThemeBtn.addEventListener('click', () => {
 
 loadTheme();
 
-
 document.querySelectorAll('.toggle-habilidades-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const targetId = btn.getAttribute('data-target');
     const targetDiv = document.getElementById(targetId);
-    if (targetDiv.style.display === 'none') {
+    if (targetDiv.style.display === 'none' || targetDiv.style.display === '') {
       targetDiv.style.display = 'block';
       btn.textContent = 'Clique aqui para esconder as habilidades';
     } else {
@@ -46,7 +45,10 @@ document.querySelectorAll('.toggle-habilidades-btn').forEach(btn => {
 
 // Função para criar gráfico de pizza com Chart.js
 function criarGraficoPizza(id, percentual, cor) {
-  const ctx = document.getElementById(id).getContext('2d');
+  const canvas = document.getElementById(id);
+  canvas.width = 120;
+  canvas.height = 120;
+  const ctx = canvas.getContext('2d');
   return new Chart(ctx, {
     type: 'doughnut',
     data: {
