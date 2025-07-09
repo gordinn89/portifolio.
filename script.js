@@ -34,7 +34,7 @@ document.querySelectorAll('.toggle-habilidades-btn').forEach(btn => {
     const targetId = btn.getAttribute('data-target');
     const targetDiv = document.getElementById(targetId);
     if (targetDiv.style.display === 'none' || targetDiv.style.display === '') {
-      targetDiv.style.display = 'block';
+      targetDiv.style.display = 'flex'; // Usando flex para alinhar texto + gráfico lado a lado
       btn.textContent = 'Clique aqui para esconder as habilidades';
     } else {
       targetDiv.style.display = 'none';
@@ -46,8 +46,8 @@ document.querySelectorAll('.toggle-habilidades-btn').forEach(btn => {
 // Função para criar gráfico de pizza com Chart.js
 function criarGraficoPizza(id, percentual, cor) {
   const canvas = document.getElementById(id);
-  canvas.width = 120;
-  canvas.height = 120;
+  canvas.width = 100;   // Tamanho menor para caber melhor no layout
+  canvas.height = 100;
   const ctx = canvas.getContext('2d');
   return new Chart(ctx, {
     type: 'doughnut',
@@ -64,7 +64,8 @@ function criarGraficoPizza(id, percentual, cor) {
       plugins: {
         legend: { display: false },
         tooltip: { enabled: false }
-      }
+      },
+      maintainAspectRatio: false
     }
   });
 }
