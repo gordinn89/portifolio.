@@ -104,7 +104,9 @@ section {
 
 body.dark section {
   border: none;
+  box-shadow: 0 8px 30px rgb(0 0 0 / 0.5); /* sombra mais forte no modo escuro */
 }
+
 
 h1, h2, h3 {
   color: #0077ff; /* Títulos azuis */
