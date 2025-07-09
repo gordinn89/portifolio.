@@ -27,24 +27,30 @@
       <div class="pessoa-habilidade">
         <h2>Kauan Rodrigues Justo</h2>
         <button class="toggle-habilidades-btn" data-target="kauan-habilidades">Clique aqui para ver as habilidades</button>
-        <div id="kauan-habilidades" class="habilidades-lista" style="display:none;">
-          <!-- Gráficos e textos das habilidades do Kauan -->
+        <div id="kauan-habilidades" class="habilidades-lista" style="display:none; flex-direction: column; gap: 1rem;">
+          <!-- Cada habilidade é um bloco com texto e gráfico lado a lado -->
           <section class="habilidade">
-            <h3>HTML</h3>
-            <p>Tenho domínio em HTML, criando páginas estruturadas e semânticas, com atenção a acessibilidade.</p>
-            <canvas id="chart-kauan-html" width="120" height="120"></canvas>
+            <div class="habilidade-texto">
+              <h3>HTML</h3>
+              <p>Tenho domínio em HTML, criando páginas estruturadas e semânticas, com atenção a acessibilidade.</p>
+            </div>
+            <canvas id="chart-kauan-html" width="100" height="100"></canvas>
           </section>
 
           <section class="habilidade">
-            <h3>CSS</h3>
-            <p>Conhecimento sólido em CSS para criar layouts responsivos e modernos.</p>
-            <canvas id="chart-kauan-css" width="120" height="120"></canvas>
+            <div class="habilidade-texto">
+              <h3>CSS</h3>
+              <p>Conhecimento sólido em CSS para criar layouts responsivos e modernos.</p>
+            </div>
+            <canvas id="chart-kauan-css" width="100" height="100"></canvas>
           </section>
 
           <section class="habilidade">
-            <h3>JavaScript</h3>
-            <p>Experiência em lógica, DOM e programação para web interativa.</p>
-            <canvas id="chart-kauan-js" width="120" height="120"></canvas>
+            <div class="habilidade-texto">
+              <h3>JavaScript</h3>
+              <p>Experiência em lógica, DOM e programação para web interativa.</p>
+            </div>
+            <canvas id="chart-kauan-js" width="100" height="100"></canvas>
           </section>
         </div>
       </div>
@@ -52,24 +58,29 @@
       <div class="pessoa-habilidade">
         <h2>Marcos Junior da Silva</h2>
         <button class="toggle-habilidades-btn" data-target="marcos-habilidades">Clique aqui para ver as habilidades</button>
-        <div id="marcos-habilidades" class="habilidades-lista" style="display:none;">
-          <!-- Habilidades do Marcos -->
+        <div id="marcos-habilidades" class="habilidades-lista" style="display:none; flex-direction: column; gap: 1rem;">
           <section class="habilidade">
-            <h3>Portugol</h3>
-            <p>Aplicação de lógica e criatividade para resolver problemas usando Portugol.</p>
-            <canvas id="chart-marcos-portugol" width="120" height="120"></canvas>
+            <div class="habilidade-texto">
+              <h3>Portugol</h3>
+              <p>Aplicação de lógica e criatividade para resolver problemas usando Portugol.</p>
+            </div>
+            <canvas id="chart-marcos-portugol" width="100" height="100"></canvas>
           </section>
 
           <section class="habilidade">
-            <h3>Robótica</h3>
-            <p>Experiência em projetos de robótica, incluindo participação em campeonatos.</p>
-            <canvas id="chart-marcos-robotica" width="120" height="120"></canvas>
+            <div class="habilidade-texto">
+              <h3>Robótica</h3>
+              <p>Experiência em projetos de robótica, incluindo participação em campeonatos.</p>
+            </div>
+            <canvas id="chart-marcos-robotica" width="100" height="100"></canvas>
           </section>
 
           <section class="habilidade">
-            <h3>Arduino</h3>
-            <p>Conhecimento prático em automação e projetos com Arduino.</p>
-            <canvas id="chart-marcos-arduino" width="120" height="120"></canvas>
+            <div class="habilidade-texto">
+              <h3>Arduino</h3>
+              <p>Conhecimento prático em automação e projetos com Arduino.</p>
+            </div>
+            <canvas id="chart-marcos-arduino" width="100" height="100"></canvas>
           </section>
         </div>
       </div>
