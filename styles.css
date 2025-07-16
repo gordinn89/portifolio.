@@ -131,6 +131,11 @@ section {
   transition: background 0.5s ease, box-shadow 0.3s ease;
 }
 
+section:first-of-type {
+  margin-top: 3rem; /* Ajuste esse valor como quiser (ex: 2rem, 4rem) */
+}
+
+
 body.dark section {
   box-shadow: 0 8px 40px var(--shadow-dark);
 }
