@@ -1,21 +1,20 @@
-/*
-  Definição de variáveis CSS para temas claro e escuro
-  Facilita a troca de cores entre os modos
-*/
+/* ============================
+   Variáveis de Tema (Claro e Escuro)
+============================= */
 :root {
-  --bg: #ffffff;
-  --text-color: #000000;
-  --title-color: #0077ff;
-  --card-bg: rgba(0, 119, 255, 0.12);
-  --btn-bg: #0077ff;
-  --btn-text: #ffffff;
-  --btn-hover-bg: #005fcc;
-  --btn-border: #0077ff;
-  --shadow-light: rgba(0, 0, 0, 0.1);
-  --shadow-dark: rgba(0, 0, 0, 0.6);
+  --bg: #ffffff;                     /* Cor de fundo da página no modo claro */
+  --text-color: #000000;            /* Cor principal dos textos no modo claro */
+  --title-color: #0077ff;           /* Cor usada nos títulos (h1, h2, h3) */
+  --card-bg: rgba(240, 240, 240, 0.9); /* fundo cinza claro com leve transparência */
+  --btn-bg: #0077ff;                /* Fundo dos botões padrão */
+  --btn-text: #ffffff;              /* Cor do texto dentro dos botões */
+  --btn-hover-bg: #005fcc;          /* Cor de fundo do botão ao passar o mouse */
+  --btn-border: #0077ff;            /* Cor da borda de botões ou ícones */
+  --shadow-light: rgba(0, 0, 0, 0.1);/* Sombra suave usada em balões e cartões (efeito de profundidade) */
+  --shadow-dark: rgba(0, 0, 0, 0.6); /* Sombra mais escura usada no modo escuro */
 }
 
-/* Tema escuro */
+
 body.dark {
   --bg: #121212;
   --text-color: #f0f0f0;
@@ -29,7 +28,9 @@ body.dark {
   --shadow-dark: rgba(0, 0, 0, 0.7);
 }
 
-/* Estilo base do body */
+/* ============================
+   Layout geral
+============================= */
 body {
   font-family: 'Poppins', sans-serif;
   background: var(--bg);
@@ -42,7 +43,9 @@ body {
   transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* Cabeçalho fixo com fundo transparente e sombra */
+/* ============================
+   Cabeçalho fixo
+============================= */
 header {
   position: fixed;
   top: 0;
@@ -53,7 +56,9 @@ header {
   z-index: 100;
 }
 
-/* Container de navegação centralizado */
+/* ============================
+   Navegação
+============================= */
 nav {
   max-width: 900px;
   margin: 0 auto;
@@ -61,21 +66,15 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  flex-wrap: nowrap;
 }
 
-/* Lista de menu horizontal */
 .menu {
   display: flex;
   list-style: none;
-  padding: 0;
-  margin: 0;
   gap: 1.5rem;
-  flex-wrap: nowrap;
   overflow-x: auto;
 }
 
-/* Estilo dos links do menu */
 .menu a {
   text-decoration: none;
   color: var(--btn-bg);
@@ -93,7 +92,6 @@ nav {
   transform: scale(1.05);
 }
 
-/* Botão de alternância de tema (claro/escuro) */
 #toggle-theme {
   background: transparent;
   border: 2px solid var(--btn-border);
@@ -110,7 +108,9 @@ nav {
   color: var(--btn-text);
 }
 
-/* Estilo da área principal do conteúdo */
+/* ============================
+   Conteúdo principal
+============================= */
 main {
   max-width: 900px;
   margin: 100px auto 2rem;
@@ -118,7 +118,6 @@ main {
   flex-grow: 1;
 }
 
-/* Estilo geral das seções (balões de conteúdo) */
 section {
   background: var(--card-bg);
   padding: 1.5rem 2rem;
@@ -130,12 +129,13 @@ section {
   transition: background 0.5s ease, box-shadow 0.3s ease;
 }
 
-/* Sombra mais escura para seções no modo escuro */
 body.dark section {
   box-shadow: 0 8px 40px var(--shadow-dark);
 }
 
-/* Estilo de títulos */
+/* ============================
+   Títulos e textos
+============================= */
 h1, h2, h3 {
   color: var(--title-color);
   margin-top: 0;
@@ -143,22 +143,21 @@ h1, h2, h3 {
   font-weight: 700;
 }
 
-/* Parágrafos e listas */
 p, li {
   color: var(--text-color);
   font-size: 1.1rem;
   margin-bottom: 0.8rem;
-  line-height: 1.5;
 }
 
-/* Grid de cartões (projetos, por exemplo) */
+/* ============================
+   Cartões e grade
+============================= */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
 }
 
-/* Estilo dos cartões */
 .card {
   background: var(--card-bg);
   padding: 1.2rem;
@@ -183,7 +182,9 @@ p, li {
   text-decoration: underline;
 }
 
-/* Estilo dos formulários */
+/* ============================
+   Formulários
+============================= */
 form {
   background: var(--card-bg);
   padding: 1.5rem 2rem;
@@ -225,6 +226,9 @@ textarea:focus {
   color: var(--btn-text);
 }
 
+/* ============================
+   Botões
+============================= */
 button {
   background: var(--btn-bg);
   color: var(--btn-text);
@@ -242,7 +246,9 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Rodapé do site */
+/* ============================
+   Rodapé
+============================= */
 footer {
   text-align: center;
   padding: 2rem 1rem;
@@ -253,16 +259,118 @@ footer {
   margin-top: auto;
 }
 
-/* Imagem de avatar no centro da tela */
+/* ============================
+   Logo/Avatar
+============================= */
 .logo {
   width: 180px;
   height: auto;
   display: block;
   margin: 0 auto 1rem;
   border-radius: 50%;
+
+
+  /* Adicionando borda azul brilhante */
+  border: 3px solid #0077ff;        /* Borda azul */
+  box-shadow: 0 0 15px #0077ff;     /* Brilho azul */
+  transition: box-shadow 0.3s ease;
 }
 
-/* Página de Habilidades */
+.logo:hover {
+  box-shadow: 0 0 25px #3399ff;     /* Brilho mais intenso no hover */
+}
+
+/* ============================
+   Foto de perfil com borda azul brilhante
+============================= */
+.foto-perfil {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 60%;
+  display: block;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  border: 3px solid #0077ff;           /* Borda azul */
+  box-shadow: 0 0 15px #0077ff;        /* Brilho azul */
+}
+
+.foto-perfil:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #3399ff;        /* Brilho mais intenso no hover */
+}
+
+/* ============================
+   Responsividade
+============================= */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .menu {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  main {
+    margin: 120px 1rem 2rem;
+  }
+
+  .logo,
+  .foto-perfil {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* ============================
+   Estilo para perfil com imagem e texto lado a lado
+============================= */
+.perfil {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.perfil > div {
+  flex: 1;
+  min-width: 250px;
+}
+
+@media (max-width: 768px) {
+  .perfil {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .perfil > div {
+    min-width: auto;
+  }
+}
+
+/* ============================
+   Seções "pessoa" com sombra personalizada
+============================= */
+.balão.pessoa {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 30px var(--shadow-light);
+  transition: box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+body.dark .balão.pessoa {
+  box-shadow: 0 8px 40px var(--shadow-dark);
+}
+
+/* ============================
+   Seção de habilidades - barra azul lateral
+============================= */
 .habilidades-pessoas {
   display: flex;
   flex-direction: column;
@@ -274,6 +382,7 @@ footer {
   border-radius: 20px;
   padding: 1.2rem 1.5rem;
   box-shadow: 0 8px 30px var(--shadow-light);
+  transition: box-shadow 0.3s ease;
 }
 
 body.dark .pessoa-habilidade {
@@ -301,10 +410,11 @@ body.dark .pessoa-habilidade {
 .habilidades-lista {
   display: none;
   gap: 0.5rem;
+  flex-direction: column;
 }
 
 .habilidade {
-  border-left: 4px solid var(--btn-bg);
+  border-left: 4px solid var(--btn-bg); /* Barra azul lateral */
   padding-left: 1rem;
   margin-bottom: 0.4rem;
 }
@@ -319,107 +429,19 @@ body.dark .pessoa-habilidade {
   font-size: 1rem;
 }
 
-/* Responsividade para telas menores que 768px */
-@media (max-width: 768px) {
-  nav {
-    flex-wrap: wrap;
-  }
-
-  .menu {
-    justify-content: center;
-    gap: 1rem;
-    overflow-x: visible;
-  }
-
-  main {
-    margin: 120px 1rem 2rem;
-  }
-
-  .logo {
-    width: 140px;
-  }
-
-  .foto-perfil {
-    width: 140px;
-    height: 140px;
-  }
-
-  .habilidade {
-    padding-left: 0.8rem;
-  }
+/* ===== Seções principais como balões (cards) ===== */
+section {
+  background: var(--card-bg);                     /* Usa o fundo definido na variável, agora branco */
+  padding: 1.5rem 2rem;                           /* Espaçamento interno para dar "respiro" ao conteúdo */
+  margin-bottom: 2rem;                            /* Espaço inferior entre os balões */
+  border-radius: 20px;                            /* Cantos arredondados para o efeito de balão */
+  box-shadow: 0 8px 30px var(--shadow-light);     /* Sombra clara para destacar o balão */
+  backdrop-filter: blur(10px);                    /* Desfoque suave atrás do balão (efeito moderno) */
+  border: 1px solid rgba(0, 0, 0, 0.05);           /* Borda fina e sutil para diferenciar do fundo */
+  transition: background 0.5s ease, box-shadow 0.3s ease; /* Animação suave ao mudar de tema */
 }
 
-/* Página Sobre - estilo dos balões de perfil */
-.balão.pessoa {
-  background: var(--card-bg);
-  border-radius: 20px;
-  padding: 1.5rem 2rem;
-  box-shadow: 0 8px 30px var(--shadow-light);
-  transition: box-shadow 0.3s ease;
-  margin-bottom: 2rem;
-}
-
-body.dark .balão.pessoa {
-  box-shadow: 0 8px 40px var(--shadow-dark);
-}
-
-.perfil {
-  display: flex;
-  gap: 1.5rem;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
-.foto-perfil {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center 60%;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
-  display: block;
-}
-
-.foto-perfil:hover {
-  transform: scale(1.05);
-}
-
-.perfil > div {
-  flex: 1;
-  min-width: 250px;
-}
-
-@media (max-width: 768px) {
-  .perfil {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .foto-perfil {
-    width: 140px;
-    height: 140px;
-    margin-bottom: 1rem;
-  }
-
-  .perfil > div {
-    min-width: auto;
-  }
-}
-
-.descricao-dupla {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  max-width: 900px;
-  margin: 0 auto 2rem;
-}
-
-/* Ajuste na seção de introdução */
-.intro {
-  max-width: 900px;
-  margin: 80px auto 2rem;
-  padding: 0 1rem;
+/* ===== Balões no modo escuro ganham sombra mais intensa ===== */
+body.dark section {
+  box-shadow: 0 8px 40px var(--shadow-dark);      /* Sombra mais forte no modo escuro */
 }
