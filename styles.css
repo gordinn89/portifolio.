@@ -65,7 +65,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem; /* mais espaço lateral */
+  padding: 1rem 1.5rem; /* mais espaço lateral */
   gap: 2rem;          /* mais espaço entre menu e botão */
 }
 
