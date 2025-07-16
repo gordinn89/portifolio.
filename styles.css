@@ -533,6 +533,8 @@ button,
   z-index: 0;
   transition: transform 0.8s ease; /* <- tempo de transição aumentado */
   will-change: transform;
+  pointer-events: none;
+  user-select: none;
 }
 
 /* ===== Ativa o preenchimento com efeito suave ===== */
