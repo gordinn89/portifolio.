@@ -1,3 +1,7 @@
+/*
+  Definição de variáveis CSS para temas claro e escuro
+  Facilita a troca de cores entre os modos
+*/
 :root {
   --bg: #ffffff;
   --text-color: #000000;
@@ -11,6 +15,7 @@
   --shadow-dark: rgba(0, 0, 0, 0.6);
 }
 
+/* Tema escuro */
 body.dark {
   --bg: #121212;
   --text-color: #f0f0f0;
@@ -24,6 +29,7 @@ body.dark {
   --shadow-dark: rgba(0, 0, 0, 0.7);
 }
 
+/* Estilo base do body */
 body {
   font-family: 'Poppins', sans-serif;
   background: var(--bg);
@@ -36,6 +42,7 @@ body {
   transition: background 0.4s ease, color 0.4s ease;
 }
 
+/* Cabeçalho fixo com fundo transparente e sombra */
 header {
   position: fixed;
   top: 0;
@@ -46,6 +53,7 @@ header {
   z-index: 100;
 }
 
+/* Container de navegação centralizado */
 nav {
   max-width: 900px;
   margin: 0 auto;
@@ -56,6 +64,7 @@ nav {
   flex-wrap: nowrap;
 }
 
+/* Lista de menu horizontal */
 .menu {
   display: flex;
   list-style: none;
@@ -66,6 +75,7 @@ nav {
   overflow-x: auto;
 }
 
+/* Estilo dos links do menu */
 .menu a {
   text-decoration: none;
   color: var(--btn-bg);
@@ -83,6 +93,7 @@ nav {
   transform: scale(1.05);
 }
 
+/* Botão de alternância de tema (claro/escuro) */
 #toggle-theme {
   background: transparent;
   border: 2px solid var(--btn-border);
@@ -99,6 +110,7 @@ nav {
   color: var(--btn-text);
 }
 
+/* Estilo da área principal do conteúdo */
 main {
   max-width: 900px;
   margin: 100px auto 2rem;
@@ -106,6 +118,7 @@ main {
   flex-grow: 1;
 }
 
+/* Estilo geral das seções (balões de conteúdo) */
 section {
   background: var(--card-bg);
   padding: 1.5rem 2rem;
@@ -117,11 +130,12 @@ section {
   transition: background 0.5s ease, box-shadow 0.3s ease;
 }
 
+/* Sombra mais escura para seções no modo escuro */
 body.dark section {
   box-shadow: 0 8px 40px var(--shadow-dark);
 }
 
-
+/* Estilo de títulos */
 h1, h2, h3 {
   color: var(--title-color);
   margin-top: 0;
@@ -129,6 +143,7 @@ h1, h2, h3 {
   font-weight: 700;
 }
 
+/* Parágrafos e listas */
 p, li {
   color: var(--text-color);
   font-size: 1.1rem;
@@ -136,12 +151,14 @@ p, li {
   line-height: 1.5;
 }
 
+/* Grid de cartões (projetos, por exemplo) */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
 }
 
+/* Estilo dos cartões */
 .card {
   background: var(--card-bg);
   padding: 1.2rem;
@@ -166,6 +183,7 @@ p, li {
   text-decoration: underline;
 }
 
+/* Estilo dos formulários */
 form {
   background: var(--card-bg);
   padding: 1.5rem 2rem;
@@ -224,6 +242,7 @@ button:hover {
   transform: scale(1.05);
 }
 
+/* Rodapé do site */
 footer {
   text-align: center;
   padding: 2rem 1rem;
@@ -234,6 +253,7 @@ footer {
   margin-top: auto;
 }
 
+/* Imagem de avatar no centro da tela */
 .logo {
   width: 180px;
   height: auto;
@@ -242,7 +262,7 @@ footer {
   border-radius: 50%;
 }
 
-/* Habilidades - Blocos compactos e sem gráfico */
+/* Página de Habilidades */
 .habilidades-pessoas {
   display: flex;
   flex-direction: column;
@@ -299,7 +319,7 @@ body.dark .pessoa-habilidade {
   font-size: 1rem;
 }
 
-/* Responsivo */
+/* Responsividade para telas menores que 768px */
 @media (max-width: 768px) {
   nav {
     flex-wrap: wrap;
@@ -329,8 +349,7 @@ body.dark .pessoa-habilidade {
   }
 }
 
-/* Estilo para as seções "pessoa" da página Sobre */
-
+/* Página Sobre - estilo dos balões de perfil */
 .balão.pessoa {
   background: var(--card-bg);
   border-radius: 20px;
@@ -340,12 +359,10 @@ body.dark .pessoa-habilidade {
   margin-bottom: 2rem;
 }
 
-/* Sombra mais forte no modo escuro */
 body.dark .balão.pessoa {
   box-shadow: 0 8px 40px var(--shadow-dark);
 }
 
-/* Container que alinha foto e texto lado a lado */
 .perfil {
   display: flex;
   gap: 1.5rem;
@@ -353,7 +370,6 @@ body.dark .balão.pessoa {
   flex-wrap: wrap;
 }
 
-/* Foto arredondada com sombra igual ao avatar da página inicial */
 .foto-perfil {
   width: 160px;
   height: 160px;
@@ -363,19 +379,18 @@ body.dark .balão.pessoa {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
   flex-shrink: 0;
+  display: block;
 }
 
 .foto-perfil:hover {
   transform: scale(1.05);
 }
 
-/* Texto dentro da pessoa */
 .perfil > div {
   flex: 1;
-  min-width: 250px; /* para manter legível em telas maiores */
+  min-width: 250px;
 }
 
-/* Responsividade para telas pequenas */
 @media (max-width: 768px) {
   .perfil {
     flex-direction: column;
@@ -388,42 +403,12 @@ body.dark .balão.pessoa {
     height: 140px;
     margin-bottom: 1rem;
   }
-.foto-perfil {
-  width: 160px;               /* tamanho da imagem */
-  height: 160px;
-  border-radius: 50%;         /* deixa a imagem circular */
-  object-fit: cover;          /* corta e ajusta a imagem para preencher o círculo */
-  object-position: center 60%; /* ajusta o foco da imagem verticalmente */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* sombra leve ao redor */
-  transition: transform 0.3s ease;  /* efeito suave ao passar o mouse */
-  flex-shrink: 0;             /* evita que encolha no flexbox */
-}
-
-.foto-perfil:hover {
-  transform: scale(1.05);     /* zoom suave ao passar o mouse */
-}
-.foto-perfil {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;       /* Faz a imagem ficar redonda */
-  object-fit: cover;        /* Corta a imagem pra caber no círculo */
-  object-position: center 60%;  /* Ajusta o foco da imagem dentro do círculo */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* Sombra sutil */
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
-  display: block;
-}
-
-.foto-perfil:hover {
-  transform: scale(1.05);
-}
 
   .perfil > div {
     min-width: auto;
   }
 }
 
-/* Container que agrupa os perfis lado a lado em telas maiores */
 .descricao-dupla {
   display: flex;
   gap: 2rem;
@@ -432,28 +417,9 @@ body.dark .balão.pessoa {
   margin: 0 auto 2rem;
 }
 
-
-/* Responsivo: empilha em telas menores */
-@media (max-width: 768px) {
-
-
-/* Centralizar e ajustar a seção intro */
+/* Ajuste na seção de introdução */
 .intro {
   max-width: 900px;
   margin: 80px auto 2rem;
   padding: 0 1rem;
-}
-
-.logo {
-  width: 180px;
-  height: auto;
-  border-radius: 50%;
-  margin: 0 auto 1rem;
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .logo {
-    width: 140px;
-  }
 }
