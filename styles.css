@@ -514,6 +514,12 @@ button,
   overflow: hidden;
   z-index: 1;
   background-color: transparent;
+
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .menu a span {
@@ -522,7 +528,6 @@ button,
   transition: color 0.4s ease;
 }
 
-/* ===== Fundo azul animado ===== */
 .menu a::before {
   content: "";
   position: absolute;
@@ -531,19 +536,33 @@ button,
   transform: scaleX(0);
   transform-origin: left;
   z-index: 0;
-  transition: transform 0.8s ease; /* <- tempo de transição aumentado */
+  transition: transform 0.8s ease;
   will-change: transform;
   pointer-events: none;
   user-select: none;
 }
 
-/* ===== Ativa o preenchimento com efeito suave ===== */
-.menu a:hover::before {
+.menu a:hover::before,
+.menu a:focus::before,
+.menu a:active::before {
   transform: scaleX(1);
 }
 
-/* ===== Texto branco no hover ===== */
-.menu a:hover span {
+.menu a:hover span,
+.menu a:focus span,
+.menu a:active span {
   color: var(--btn-text);
 }
+
+.menu a:focus,
+.menu a:active {
+  outline: none;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
 
