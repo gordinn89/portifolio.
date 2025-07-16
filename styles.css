@@ -93,19 +93,25 @@ nav {
 }
 
 #toggle-theme {
-  position: fixed;       /* Fixa o botão na tela */
-  top: 1rem;             /* Distância do topo */
-  right: 1rem;           /* Distância da direita */
-  z-index: 200;          /* Para ficar acima do menu e do conteúdo */
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 200;
+  font-size: 1.2rem;
+  padding: 0.3rem 0.5rem;
   background: transparent;
   border: 2px solid var(--btn-border);
   border-radius: 50%;
-  font-size: 1.5rem;
-  padding: 0.4rem 0.6rem;
-  color: var(--btn-bg);
   cursor: pointer;
   transition: background 0.3s ease, color 0.3s ease;
 }
+
+main {
+  position: relative;
+  z-index: 300;
+  padding-right: 3rem;
+}
+
 
 #toggle-theme:hover {
   background: var(--btn-hover-bg);
