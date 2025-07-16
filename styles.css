@@ -93,10 +93,14 @@ nav {
 }
 
 #toggle-theme {
+  position: fixed;       /* Fixa o botão na tela */
+  top: 1rem;             /* Distância do topo */
+  right: 1rem;           /* Distância da direita */
+  z-index: 200;          /* Para ficar acima do menu e do conteúdo */
   background: transparent;
   border: 2px solid var(--btn-border);
   border-radius: 50%;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   padding: 0.4rem 0.6rem;
   color: var(--btn-bg);
   cursor: pointer;
@@ -107,6 +111,7 @@ nav {
   background: var(--btn-hover-bg);
   color: var(--btn-text);
 }
+
 
 /* ============================
    Conteúdo principal
