@@ -512,20 +512,18 @@ button,
   padding: 0.4rem 0.7rem;
   border-radius: 6px;
   overflow: hidden;
-  z-index: 1;
   background-color: transparent;
+  z-index: 1;
 
   -webkit-tap-highlight-color: transparent;
-  -webkit-user-select: none;
   user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
 }
 
 .menu a span {
   position: relative;
   z-index: 2;
   transition: color 0.4s ease;
+  pointer-events: none;  /* impede que span capture eventos */
 }
 
 .menu a::before {
@@ -537,11 +535,11 @@ button,
   transform-origin: left;
   z-index: 0;
   transition: transform 0.8s ease;
-  will-change: transform;
   pointer-events: none;
   user-select: none;
 }
 
+/* O efeito aparece só no hover/focus/active e desaparece ao tirar */
 .menu a:hover::before,
 .menu a:focus::before,
 .menu a:active::before {
@@ -554,15 +552,7 @@ button,
   color: var(--btn-text);
 }
 
-.menu a:focus,
-.menu a:active {
-  outline: none;
-  background: var(--btn-bg);
-  color: var(--btn-text);
-}
-
+/* Para mobile, removemos o destaque padrão do browser */
 body {
   -webkit-tap-highlight-color: transparent;
 }
-
-
